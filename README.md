@@ -12,7 +12,7 @@ I found it relatively simple to use the Azure-Cosmos library to interact with my
 
 The biggest thing with using Python is that you have to pay close attention to the version of Python you're selecting. It ought to be one of the ones that's officially supported by the [Azure-Cosmos library](https://pypi.org/project/azure-cosmos/), and then, when creating the Function App that the function will be deployed to, you need to make sure the version is identical there as well. And make sure you've got your virtual environment activated when testing and deploying your function from the CLI.
 
-When it came time to deploy the function, I found it easier to do a local (as opposed to remote) build using this Azure Core Function Tools command:
+When it came time to deploy the function, I did a local (as opposed to remote) build using this Azure Core Function Tools command:
 
 ```
 func azure functionapp publish appname --build local
@@ -20,3 +20,20 @@ func azure functionapp publish appname --build local
 
 Requirements.txt - as a noob, my impulse was to put the name of every library I imported in my __init__.py. DO NOT put modules here that are a part of the standard library, or you will get errors. Also, you do not need to include azure-functions.
 
+## Github Actions
+
+The first time I tested my frontend.main.yml, I received the following error:
+
+ErrorCode: BlobAlreadyExists
+
+Did some Google-Fu and found this discussion:
+
+https://github.com/Azure/azure-cli/issues/21477
+
+Per the advice on there, I added '--overwrite' to this line in the .yml file:
+
+```
+az storage blob upload-batch --account-name azureresume4eva --auth-mode key -d '$web' -s frontend/ --overwrite
+```
+
+The change was effective. The next change I made to the HTML was visible after pushing my repo and refreshing the web page. 
