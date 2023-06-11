@@ -10,13 +10,13 @@ This was probably the most daunting step for me. I originally tried to follow al
 
 I found it relatively simple to use the Azure-Cosmos library to interact with my Cosmos NoSql DB.
 
-The biggest thing with using Python is that you have to pay close attention to the version of Python you're selecting. It ought to be one of the ones that's officially supported by the Azure-Cosmos library, and then, when creating the Function App that the function will be deployed to, you need to make sure the version is identical there as well. And make sure you've got your virtual environment activated with testing and deploying your function from the CLI.
+The biggest thing with using Python is that you have to pay close attention to the version of Python you're selecting. It ought to be one of the ones that's officially supported by the [Azure-Cosmos library](https://pypi.org/project/azure-cosmos/), and then, when creating the Function App that the function will be deployed to, you need to make sure the version is identical there as well. And make sure you've got your virtual environment activated when testing and deploying your function from the CLI.
 
-Call me lazy, but when it came time to deploy the function, I found it easier to do a local (as opposed to remote) build using this Azure Core Function Tools command:
+When it came time to deploy the function, I found it easier to do a local (as opposed to remote) build using this Azure Core Function Tools command:
 
 ```
 func azure functionapp publish appname --build local
 ```
 
-Requirements.txt - as a noob, my impulse was to put the name of every library I imported in my __init__.py. DO NOT put modules here that are a part of the standard library, or you will get errors. Also, you do not need to include azure-functions.i
+Requirements.txt - as a noob, my impulse was to put the name of every library I imported in my __init__.py. DO NOT put modules here that are a part of the standard library, or you will get errors. Also, you do not need to include azure-functions.
 
