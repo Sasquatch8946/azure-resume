@@ -18,5 +18,5 @@ Call me lazy, but when it came time to deploy the function, I found it easier to
 func azure functionapp publish appname --build local
 ```
 
-Requirements.txt - as a noob, my impulse was to put the name of every library I imported in my __init__.py. DO NOT put modules here that are a part of the standard library, or you will get errors. Also, you do not need to include azure-functions.i
+Requirements.txt - as a noob, my impulse was to put the name of every library I imported in my __init__.py. DO NOT put modules here that are a part of the standard library, or you will get errors. Also, you do not need to include azure-functions.
 
