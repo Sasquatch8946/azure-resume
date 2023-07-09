@@ -5,6 +5,10 @@ My own Azure resume, following [ACG project video.](https://www.youtube.com/watc
 - Frontend folder contains the website.
 - main.js contains visitor counter code.
 
+## CSS
+
+I largely just relied on the template provided by ACG, but I did have to add the "object-fit: cover" property to the "profile-pic" definition so my picture from LinkedIn did not appear all stretched out.
+
 ## Azure Function
 This was probably the most daunting step for me. I originally tried to follow along with ACG's example in C#, but something was off. I was getting cryptic errors that I tried to google to no avail, as I do not know C# very well at all (maybe I'll get around to learning it some day, if I can identify a strong personal or professional reason for it; C# does offer the fastest [cold start time](https://mikhail.io/serverless/coldstarts/azure/) of any programming language supported by Azure Functions). So, I decided to develop a function in Python instead. I thought this was better, anyway, since I was particularly interested in this part of the project and wanted to exercise a bit more originality than I did with the frontend web portion. I'm more naturally inclined towards APIs and databases, I suppose.
 
@@ -36,4 +40,4 @@ Per the advice on there, I added '--overwrite' to this line in the .yml file:
 az storage blob upload-batch --account-name azureresume4eva --auth-mode key -d '$web' -s frontend/ --overwrite
 ```
 
-The change was effective. The next change I made to the HTML was visible after pushing my repo and refreshing the web page. 
+The change was effective. The next change I made to the HTML was visible after pushing my repo and refreshing the web page.
