@@ -48,7 +48,7 @@ jobs:
       shell: bash
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api'
-        python -m pytest --import-mode=append tests/
+        python -m pytest
         popd
         
     - name: 'Run Azure Functions Action'
