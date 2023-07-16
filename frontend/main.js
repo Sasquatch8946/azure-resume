@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 const localApi = 'http://localhost:7071/api/getAzureResumeCounterTrigger';
-const functionApi = 'https://azureresumecounter4ever.azurewebsites.net/api/getAzureResumeCounterTrigger?code=o5BQ0JclKrQ_HdhkVf_3U7HAK6egb_TE7wn2P1lkEqvAAzFuvUGN1A==';
+const functionApi = 'https://getandupdatecounter.azurewebsites.net/api/hello?code=GewlE6owePzc-HAI3B7BvgRPzDCWPaXqz0nKcoiN6LbPAzFuoAmh7g=='
 
 const getVisitCount = () => {
     let count = 30;
