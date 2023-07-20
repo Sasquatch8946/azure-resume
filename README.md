@@ -46,7 +46,7 @@ My piece of advise for this section is to follow the guidance in the "Unit testi
 
 "For most bindings, it's possible to create a mock input object by creating an instance of an appropriate class from the azure.functions package."
 
-It's possible to learn what the class name is by reading [the documentation on Cosmos DB input and outbindings](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2?tabs=in-process%2Cextensionv4&pivots=programming-language-python).
+It's possible to learn what class names you need by reading [the documentation on Cosmos DB input and outbindings](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2?tabs=in-process%2Cextensionv4&pivots=programming-language-python) and paying attention to the type hints in the code samples.
 
 Also, following [this blog post](https://chriskingdon.com/2020/11/30/the-definitive-guide-to-azure-functions-in-python-part-2-unit-testing/), we can simply mock out the output binding since we don't need to actually write to the database during our test:
 
