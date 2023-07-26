@@ -7,7 +7,9 @@ My own Azure resume, following [ACG project video.](https://www.youtube.com/watc
 
 ## CSS
 
-I largely just relied on the template provided by ACG, though I did have to do some work to get my profile picture to display correctly. I tried to make the dimensions specified in the original CSS properties work by adding the "object-fit: cover" property to the "profile-pic" class.
+I largely just relied on the template provided by ACG, though I did have to do some work to get my profile picture to display correctly. I tried to make the dimensions specified in the original CSS properties work by adding the "object-fit: cover" property to the "profile-pic" class. This worked initially, but after pushing this change to my website, I noticed that it created [pixelated artifacts](https://stackoverflow.com/questions/74502978/object-fit-cover-gives-pixelated-images-on-chrome) around the edges of my image in Chromium-based browsers.
+
+Ultimately, I ended up setting "height" to "auto" and "max-width" to 100% to preserve the [aspect ratio](https://stackoverflow.com/questions/3751565/css-100-width-or-height-while-keeping-aspect-ratio). This resulted in my image looking taller, but I figured it was better than it being stretched out or pixelated.
 
 ## Azure Function
 This was probably the most daunting step for me. I originally tried to follow along with ACG's example in C#, but something was off. I was getting cryptic errors that I tried to google to no avail, as I do not know C# very well at all (maybe I'll get around to learning it some day, if I can identify a strong personal or professional reason for it; C# does offer the fastest [cold start time](https://mikhail.io/serverless/coldstarts/azure/) of any programming language supported by Azure Functions). So, I decided to develop a function in a programming language I was alrready familiar with: Python. I thought this was better, anyway, since I was particularly interested in this part of the project and wanted to exercise a bit more originality than I did with the frontend web portion. I'm more naturally inclined towards APIs and databases, I suppose.
