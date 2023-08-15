@@ -55,3 +55,12 @@ Also, following [this blog post](https://chriskingdon.com/2020/11/30/the-definit
 ```
 outputDoc = Mock.mock()
 ```
+
+## Bicep
+
+I ended up deciding to use Bicep to automate the setup of all the necessary resources for this project. Its syntax seemed more friendly than ARM, which I had used for much simpler deployments previously, and does not require one to maintain a state file and modules like Terraform.
+
+Here are the things I found that I could not create with Bicep files:
+
+-Database item/initialization of counter.
+-Static website on storage account.
