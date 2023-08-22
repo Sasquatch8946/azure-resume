@@ -29,7 +29,16 @@ jobs:
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
       with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CREDENTIALS_TEST }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID_TEST }}
+
+    # Deploy a bicep file
+    - name: 'Deplarm-deploy infra'
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_TEST }}
+        resourceGroupName: ${{ secrets.AZURE_RG_TEST }}
+        template: .\cosmosdb2.bicep
 
     - name: Setup Python ${{ env.PYTHON_VERSION }} Environment
       uses: actions/setup-python@v4
@@ -51,15 +60,16 @@ jobs:
         python -m pip install pytest azure-functions
         python -m pytest tests
         popd
-        
+
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
       id: fa
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api/
-        # publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+        # publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} # only need to use if you're not owner of the subscription
         scm-do-build-during-deployment: true
         enable-oryx-build: true
+
 
 # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples

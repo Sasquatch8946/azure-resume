@@ -1,0 +1,1 @@
+az ad sp create-for-rbac --name "crcApp" --role contributor --scopes /subscriptions/a937970b-f2d4-4fba-a46d-b7a3096592c8/resourceGroups/testNorthCentral --sdk-auth
