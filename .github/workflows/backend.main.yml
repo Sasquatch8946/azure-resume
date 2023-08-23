@@ -39,6 +39,7 @@ jobs:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_TEST }}
         resourceGroupName: ${{ secrets.AZURE_RG_TEST }}
         template: .\cosmosdb2.bicep
+        failOnStdErr: false
 
     - name: Setup Python ${{ env.PYTHON_VERSION }} Environment
       uses: actions/setup-python@v4
