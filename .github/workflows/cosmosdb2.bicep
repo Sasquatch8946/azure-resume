@@ -1,6 +1,6 @@
 param location string = 'northcentralus'
 param dbName string = 'CloudResume'
-param appName string = 'bicepfunc${uniqueString(resourceGroup().id)}'
+param appName string = 'crcBicepFunc'
 param storageAccountType string = 'Standard_LRS'
 param runtime string = 'python'
 
