@@ -29,17 +29,7 @@ jobs:
     - name: 'Login via Azure CLI'
       uses: azure/actions/login@v1 # added '/actions/' per this: https://github.com/Azure/login/issues/205
       with:
-          creds: ${{ secrets.AZURE_CREDENTIALS_TEST }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID_TEST }}
-
-    # Deploy a bicep file
-    - name: 'Deplarm-deploy infra'
-      uses: azure/arm-deploy@v1
-      with:
-        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_TEST }}
-        resourceGroupName: ${{ secrets.AZURE_RG_TEST }}
-        template: .\cosmosdb2.bicep
-        failOnStdErr: false
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Setup Python ${{ env.PYTHON_VERSION }} Environment
       uses: actions/setup-python@v4
