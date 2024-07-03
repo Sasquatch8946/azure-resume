@@ -1,9 +1,16 @@
 # azure-resume
 My own Azure resume, following [ACG project video.](https://www.youtube.com/watch?v=ieYrBWmkfno&t=1197s)
 
-## First steps
-- Frontend folder contains the website.
-- main.js contains visitor counter code.
+## Overview of Architecture
+In short, this project consists of a static website hosted in an Azure storage account. I've used Azure Front Door to serve the website on a custom domain and enforce TLS. My main.js inserts a dynamic visitor counter by calling an Azure Function, which in turn retrieves and increments the counter from a Cosmos DB instance. 
+
+## Directory Structure
+
+- The frontend folder contains all of the HTML/CSS/Javascript.
+- The api folder contains the Azure Function written in Python along with the unit tests.
+- The workflow folder contains the .yml definition for the GitHub Actions used as part of the CI/CD pipeline. 
+
+The rest of the README delves a little deeper into some of the challenges I faced along the way. I plan to occasionally update the following sections as I continue to update and improve my website.
 
 ## CSS
 
