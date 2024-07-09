@@ -80,5 +80,6 @@ To help mitigate these concerns, I deployed an Azure API Management instance, so
 
 Here's documentation on how to create APIM policies to set request headers (to insert the Function key) and to enforce rate limiting. 
 
-[https://learn.microsoft.com/en-us/azure/api-management/set-query-parameter-policy](https://learn.microsoft.com/en-us/azure/api-management/set-query-parameter-policy)
-[https://learn.microsoft.com/en-us/azure/api-management/rate-limit-policy](https://learn.microsoft.com/en-us/azure/api-management/rate-limit-policy)
+[How to set request headers in Azure APIM.](https://learn.microsoft.com/en-us/azure/api-management/set-query-parameter-policy)
+
+[How to rate limit.](https://learn.microsoft.com/en-us/azure/api-management/rate-limit-policy)
