@@ -25,7 +25,7 @@ In the first version of my function, I simply created a Cosmos DB client using t
 
 I thought it was be good to learn how to work with the bindings, anyway, so I dove in, and along the way, switched from the Python Programming Model v1 to v2, since for some reason the latter would accept my connection string to connect to the Cosmos DB but the former would not. For a comparison of the two different program models, see the [Python developer reference for Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-python?tabs=asgi%2Capplication-level&pivots=python-mode-decorators).
 
-Currently, my Azure Function works), but I wouldn't considered it 100% optimized. I've noticed a considerable delay in the time between when the website loads and when the visitor counter populates. I'm continuing to troubleshoot this. (Perhaps I will learn C# after all.)
+Currently, my Azure Function works, but I wouldn't considered it 100% optimized. I've noticed a considerable delay in the time between when the website loads and when the visitor counter populates. I'm continuing to troubleshoot this. (Perhaps I will learn C# after all.)
 
 ## Github Actions
 
@@ -83,3 +83,18 @@ Here's documentation on how to create APIM policies to set request headers (to i
 [How to set request headers in Azure APIM.](https://learn.microsoft.com/en-us/azure/api-management/set-query-parameter-policy)
 
 [How to rate limit.](https://learn.microsoft.com/en-us/azure/api-management/rate-limit-policy)
+
+## Azure App Service
+
+Eventually, I'd like to migrate my website from Azure Storage to Azure App Service so I can completely avoid exposing any URLs in my frontend code and also restrict access to my Function App to authenticated calls only. I would be able to enforce authentication because Azure App Service supports managed identities, whereas Azure Storage Static Websites do not. 
+
+I refactored my app to use the Python web framework Flask, but I encountered an issue after adding the Flask app as an endpoint to Azure Front Door, namely, the visitor counter was getting cached somewhere and was only updating whenever the app got restarted (usually after coming out of hibernation). I tried preventing caching by adding the below environment variables, but it did not work. 
+
+WEBSITE_DYNAMIC_CACHE: 0
+WEBSITE_LOCAL_CACHE_OPTION: Never
+
+So, I reverted to using Azure Storage until I could figure this out. 
+
+My next plan of attack is to see if there is something I can configure within my Python code to prevent caching. 
+
+The suggestion here looks promising. 
