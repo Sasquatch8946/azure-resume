@@ -71,3 +71,14 @@ Here are the things I found that I could not create with Bicep files:
 
 -Database item/initialization of counter.
 -Static website on storage account.
+
+## API Management (APIM)
+
+For a while, I was a bit hesitant to make a LinkedIn post about my website because I was not comfortable with publicly exposing my Function api key. Also, as unlikely as it was, I was a bit paranoid about someone making unlimited async calls to my website/function app and driving up my Azure bill. 
+
+To help mitigate these concerns, I deployed an Azure API Management instance, so I could both obscure the true url/key of my function app and implement rate limiting. 
+
+Here's documentation on how to create APIM policies to set request headers (to insert the Function key) and to enforce rate limiting. 
+
+[https://learn.microsoft.com/en-us/azure/api-management/set-query-parameter-policy](https://learn.microsoft.com/en-us/azure/api-management/set-query-parameter-policy)
+[https://learn.microsoft.com/en-us/azure/api-management/rate-limit-policy](https://learn.microsoft.com/en-us/azure/api-management/rate-limit-policy)
