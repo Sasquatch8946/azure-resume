@@ -9,7 +9,7 @@ In short, this project consists of a static website hosted in an Azure storage a
 - The frontend folder contains all of the HTML/CSS/Javascript.
 - The api folder contains the Azure Function written in Python along with the unit tests.
 - The workflow folder contains the .yml definition for the GitHub Actions used as part of the CI/CD pipeline.
-- The IaC folder contains my ongoing attempts to automate as much of the setup of this project as possible using Bicep.
+- The iac folder contains my ongoing attempts to automate as much of the setup of this project as possible using Bicep.
 
 The rest of the README delves a little deeper into some of the challenges I faced along the way. I plan to occasionally update the following sections as I continue to update and improve my website.
 
