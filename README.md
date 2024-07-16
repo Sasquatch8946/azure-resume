@@ -99,3 +99,7 @@ So, I reverted to using Azure Storage until I could figure this out.
 My next plan of attack is to see if there is something I can configure within my Python code to prevent caching. 
 
 The suggestion here looks promising. 
+
+UPDATE: I got this to work by setting the "Cache-Control" Header to "no-store" when returning the JSON response from my Cosmos DB to my frontend JS. I ended up removing the two above app service settings as they were not needed. 
+
+After I successfully migrated to an Azure App Service with Flask, I migrated my codebase to [this new repo](https://github.com/Sasquatch8946/azure-resume-flask). 
